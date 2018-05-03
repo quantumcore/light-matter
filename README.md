@@ -12,5 +12,5 @@ Created for Fun only. With some tools useful for monitoring your PC when you're 
 
 It is to be used with Python 3.5 Only.
 
-###Known Bugs : 
+### Known Bugs : 
 [1] Case Sensetive in Compiler input Check.
