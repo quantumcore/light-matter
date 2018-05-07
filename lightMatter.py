@@ -199,7 +199,7 @@ def __main__():
             __main__()
 
     def virus():
-        print("[+] Virus Generation for Troll. ")
+        print("[+] Available Modules : ")
         print("\033[1;37;40mSelect Virus Type : ")
         print("\033[1;34;40m[*] All the Useless Stuff for People Learning :")
         print("\033[1;33;40m[1] MagicText - Automatically Writes Text every 10 Seconds to Scare the shit out of Victim.")
