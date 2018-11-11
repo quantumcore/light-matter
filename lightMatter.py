@@ -13,11 +13,6 @@ try:
 except ImportError:
     print("Pynput not found. Installing.")
     os.system("py -m pip install pynput")
-try:
-    import imp
-except ImportError:
-    print("imp not found. Installing.")
-    os.system("py -m pip install imp")
 
 from os import getenv
 import sqlite3
