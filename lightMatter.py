@@ -238,7 +238,7 @@ def __main__():
         print("[10] A Fake 'You've BEEN HACKED' Application with Graphical User Interface." + Style.RESET_ALL)
         print("[*] Local and Remote Exploits : ")
         print("[*] Coming in Version 3.")
-        type = input(Fore.LIGHTGREEN_EX + "FastCorp>"+ Fore.LIGHTYELLOW_EX + "$~/Virus Type : " + Style.RESET_ALL)
+        type = input(Fore.LIGHTGREEN_EX + "LightMatter>"+ Fore.LIGHTYELLOW_EX + "$~/Virus Type : " + Style.RESET_ALL)
         if(type == "1"):
             print("[*] You have selected type MagicText.")
             print("[+] Now starting Virus Generation.")
@@ -370,7 +370,7 @@ def __main__():
             __main__()
 
     #All the Work THIS IS __MAIN__
-    cmd = input(Fore.LIGHTGREEN_EX + "FastCorp>" + Style.RESET_ALL)
+    cmd = input(Fore.LIGHTGREEN_EX + "LightMatter>" + Style.RESET_ALL)
     if(cmd == "help"):
         print("[*] Troll-Virus-Generator")
         print("[+] HELP : ")
